@@ -68,6 +68,28 @@ if(galleryTrack){
   const galleryStep = () => galleryTrack.querySelector('.gallery-slide').offsetWidth + 16;
   galleryPrev.addEventListener('click', () => galleryTrack.scrollBy({ left: -galleryStep(), behavior:'smooth' }));
   galleryNext.addEventListener('click', () => galleryTrack.scrollBy({ left: galleryStep(), behavior:'smooth' }));
+
+  // Mouse drag-to-scroll (desktop has no touch swipe)
+  let isDragging = false, dragStartX = 0, dragScrollStart = 0, dragMoved = false;
+  galleryTrack.addEventListener('mousedown', e => {
+    isDragging = true;
+    dragMoved = false;
+    dragStartX = e.pageX;
+    dragScrollStart = galleryTrack.scrollLeft;
+    galleryTrack.classList.add('dragging');
+  });
+  window.addEventListener('mousemove', e => {
+    if(!isDragging) return;
+    const dx = e.pageX - dragStartX;
+    if(Math.abs(dx) > 4) dragMoved = true;
+    galleryTrack.scrollLeft = dragScrollStart - dx;
+  });
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    galleryTrack.classList.remove('dragging');
+  });
+  // Prevent the drag from also triggering an accidental image click/navigation
+  galleryTrack.addEventListener('click', e => { if(dragMoved) e.preventDefault(); }, true);
 }
 
 // Sticky header shadow
