@@ -114,7 +114,7 @@
 <!-- ============ HEADER ============ -->
 <header id="site-header">
   <div class="container">
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="#" class="brand" aria-label="Metz Mods home, scroll to top">
         <img src="metz-logo.webp" alt="Metz Mods" class="brand-logo">
       </a>
@@ -143,9 +143,9 @@
   <section class="hero">
     <div class="hero-bg" aria-hidden="true">
       <div class="hero-slide active" style="background-image:url('street-lexus.webp')"></div>
-      <div class="hero-slide" style="background-image:url('trail-4runner.webp')"></div>
-      <div class="hero-slide" style="background-image:url('trail-jeep.webp')"></div>
-      <div class="hero-slide" style="background-image:url('trail-frontier.webp')"></div>
+      <div class="hero-slide" data-src="trail-4runner.webp"></div>
+      <div class="hero-slide" data-src="trail-jeep.webp"></div>
+      <div class="hero-slide" data-src="trail-frontier.webp"></div>
       <div class="hero-gradient"></div>
     </div>
     <div class="container hero-inner">
@@ -162,11 +162,11 @@
         <div class="hero-badge"><svg class="icon"><use href="#i-users"/></svg><span>All Makes &amp; Models</span></div>
         <div class="hero-badge"><svg class="icon"><use href="#i-wrench"/></svg><span>Custom Fabrication</span></div>
       </div>
-      <div class="hero-dots hero-anim d6">
-        <button class="hero-dot active" data-slide="0" aria-label="Show slide 1"></button>
-        <button class="hero-dot" data-slide="1" aria-label="Show slide 2"></button>
-        <button class="hero-dot" data-slide="2" aria-label="Show slide 3"></button>
-        <button class="hero-dot" data-slide="3" aria-label="Show slide 4"></button>
+      <div class="hero-dots hero-anim d6" role="group" aria-label="Slide navigation">
+        <button class="hero-dot active" data-slide="0" aria-label="Slide 1 of 4" aria-current="true"></button>
+        <button class="hero-dot" data-slide="1" aria-label="Slide 2 of 4" aria-current="false"></button>
+        <button class="hero-dot" data-slide="2" aria-label="Slide 3 of 4" aria-current="false"></button>
+        <button class="hero-dot" data-slide="3" aria-label="Slide 4 of 4" aria-current="false"></button>
       </div>
     </div>
   </section>
@@ -210,14 +210,14 @@
       <div class="gallery-carousel reveal">
         <button class="gallery-nav prev" aria-label="Previous photo"><svg class="icon"><use href="#i-chevron"/></svg></button>
         <div class="gallery-track" id="galleryTrack">
-          <div class="gallery-slide" data-lightbox-index="0"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="street-bmw.webp" alt="BMW E46 stance build" loading="lazy" data-lightbox-index="0"><span class="build-caption">BMW E46 — Stance Build</span></div>
-          <div class="gallery-slide" data-lightbox-index="1"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="trail-4runner.webp" alt="Toyota 4Runner trail rig" loading="lazy" data-lightbox-index="1"><span class="build-caption">Toyota 4Runner — Trail Rig</span></div>
-          <div class="gallery-slide" data-lightbox-index="2"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="street-lexus.webp" alt="Lexus IS300 street build" loading="lazy" data-lightbox-index="2"><span class="build-caption">Lexus IS300 — Street Build</span></div>
-          <div class="gallery-slide" data-lightbox-index="3"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="trail-jeep.webp" alt="Jeep Cherokee trail ready" loading="lazy" data-lightbox-index="3"><span class="build-caption">Jeep Cherokee — Trail Ready</span></div>
-          <div class="gallery-slide" data-lightbox-index="4"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="street-engine.webp" alt="Turbo engine bay build" loading="lazy" data-lightbox-index="4"><span class="build-caption">Built For Boost</span></div>
-          <div class="gallery-slide" data-lightbox-index="5"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="trail-frontier.webp" alt="Nissan Frontier off-road build" loading="lazy" data-lightbox-index="5"><span class="build-caption">Nissan Frontier — Off-Road Build</span></div>
-          <div class="gallery-slide" data-lightbox-index="6"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="street-coilover.webp" alt="Coilover suspension install" loading="lazy" data-lightbox-index="6"><span class="build-caption">Coilover Install</span></div>
-          <div class="gallery-slide" data-lightbox-index="7"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="trail-suspension.webp" alt="Truck lift kit and level kit install" loading="lazy" data-lightbox-index="7"><span class="build-caption">Truck Lift Kit Installs &amp; Level Kits</span></div>
+          <div class="gallery-slide" data-lightbox-index="0" tabindex="0" role="button" aria-label="Open BMW E46 Stance Build photo"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="street-bmw.webp" alt="BMW E46 stance build" loading="lazy" decoding="async" data-lightbox-index="0"><span class="build-caption">BMW E46 — Stance Build</span></div>
+          <div class="gallery-slide" data-lightbox-index="1" tabindex="0" role="button" aria-label="Open Toyota 4Runner Trail Rig photo"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="trail-4runner.webp" alt="Toyota 4Runner trail rig" loading="lazy" decoding="async" data-lightbox-index="1"><span class="build-caption">Toyota 4Runner — Trail Rig</span></div>
+          <div class="gallery-slide" data-lightbox-index="2" tabindex="0" role="button" aria-label="Open Lexus IS300 Street Build photo"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="street-lexus.webp" alt="Lexus IS300 street build" loading="lazy" decoding="async" data-lightbox-index="2"><span class="build-caption">Lexus IS300 — Street Build</span></div>
+          <div class="gallery-slide" data-lightbox-index="3" tabindex="0" role="button" aria-label="Open Jeep Cherokee Trail Ready photo"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="trail-jeep.webp" alt="Jeep Cherokee trail ready" loading="lazy" decoding="async" data-lightbox-index="3"><span class="build-caption">Jeep Cherokee — Trail Ready</span></div>
+          <div class="gallery-slide" data-lightbox-index="4" tabindex="0" role="button" aria-label="Open Built For Boost engine photo"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="street-engine.webp" alt="Turbo engine bay build" loading="lazy" decoding="async" data-lightbox-index="4"><span class="build-caption">Built For Boost</span></div>
+          <div class="gallery-slide" data-lightbox-index="5" tabindex="0" role="button" aria-label="Open Nissan Frontier Off-Road Build photo"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="trail-frontier.webp" alt="Nissan Frontier off-road build" loading="lazy" decoding="async" data-lightbox-index="5"><span class="build-caption">Nissan Frontier — Off-Road Build</span></div>
+          <div class="gallery-slide" data-lightbox-index="6" tabindex="0" role="button" aria-label="Open Coilover Install photo"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="street-coilover.webp" alt="Coilover suspension install" loading="lazy" decoding="async" data-lightbox-index="6"><span class="build-caption">Coilover Install</span></div>
+          <div class="gallery-slide" data-lightbox-index="7" tabindex="0" role="button" aria-label="Open Truck Lift Kit Install photo"><span class="gallery-stripes" aria-hidden="true"><span></span><span></span><span></span></span><img src="trail-suspension.webp" alt="Truck lift kit and level kit install" loading="lazy" decoding="async" data-lightbox-index="7"><span class="build-caption">Truck Lift Kit Installs &amp; Level Kits</span></div>
         </div>
         <button class="gallery-nav next" aria-label="Next photo"><svg class="icon"><use href="#i-chevron"/></svg></button>
       </div>
@@ -354,6 +354,7 @@
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
+        <nav aria-label="Footer links">
         <ul>
           <li><a href="/#maintenance">Maintenance</a></li>
           <li><a href="/#services">Services</a></li>
@@ -362,6 +363,7 @@
           <li><a href="/faq">FAQ</a></li>
           <li><a href="/#contact">Book Appointment</a></li>
         </ul>
+        </nav>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -391,6 +393,6 @@
 
 <div class="float-book" id="floatBook"><a href="tel:+19495994357" class="btn btn-primary"><svg class="icon"><use href="#i-phone"/></svg>Call Now</a></div>
 
-<script src="script.js?v=2"></script>
+<script src="script.js?v=2" defer></script>
 </body>
 </html>
